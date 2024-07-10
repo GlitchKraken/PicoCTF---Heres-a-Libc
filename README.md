@@ -70,7 +70,7 @@ putting 0x6261616b6261616a into cyclic -l gives us 136. This will be the size of
 
 Next, I wrote a small script with pwntools to quickly test this all out.
 
-```
+```python
 from pwn import *
 
 # so we can autosplit our view when using tmux
@@ -149,7 +149,7 @@ After that, we call main(), to restart the program- effectively allowing us to e
 
 
 
-```
+```python
 from pwn import *
 
 context.update(terminal=['tmux', '.splitw', '-v'])
