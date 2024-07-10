@@ -1,8 +1,7 @@
 # PicoCTF Here's a LIBC
 
 Writeup by SpiffyLich
-![test](https://imgur.com/HZsgxNa.jpg)
-
+<img align="center" alt="secretbestgirl" width="250px" src="https://imgur.com/HZsgxNa.jpg">
 
 ## Tools Used:
 - [Pwndbg](https://github.com/pwndbg/pwndbg)
