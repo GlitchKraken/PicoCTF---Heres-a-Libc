@@ -128,6 +128,7 @@ these two here will let us setup the first 2 arguments, sweet!
 
 3.) In our code, we CALL the PLT version of puts, and for the argument, we place the address of the dynamic GOT-puts that we found.  this SHOULD leak the address, and tell us where libc is. Overall, our ROP-chain should look something like this:
 <br />
+<br />
 ![alt text](image-13.png)
 
 
