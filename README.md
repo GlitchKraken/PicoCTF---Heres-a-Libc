@@ -119,8 +119,11 @@ and 0x400540 is the PLT address.
 
 
 2.) We use ropper or rp++ to find ROP gadgets that will allow us to setup registers for arbitrary function calls, allowing us to actually call puts.
+
 ![alt text](image-10.png)
+
 these two here will let us setup the first 2 arguments, sweet!
+
 ![alt text](image-11.png)
 
 3.) In our code, we CALL the PLT version of puts, and for the argument, we place the address of the dynamic GOT-puts that we found.  this SHOULD leak the address, and tell us where libc is. Overall, our ROP-chain should look something like this:
@@ -130,6 +133,7 @@ these two here will let us setup the first 2 arguments, sweet!
 4.) Were almost done, now we use nm -D on the provided library to find out what the offset of our desired function(s) are. 
 
 I.e: whenever we leak the libc address, to find out where the START of libc is, we will subtract the value in here from that address. in this case, we're leaking puts(), so we'll subtract 0x80a30 from it.
+<br />
 ![alt text](image-12.png)
 
 Once we have libc-base and an offset, we can call literally anything IN libc, by just running the above nm command again, and adding our desired functions offset to the found libc-base.
@@ -229,5 +233,6 @@ p.interactive()
 In my case, I made an exploit2 string, where I calculated where system() should be with nm -D, and I used vmmap in pwndbg to find "/bin/sh" in libc.
 
 with both of these in place, I just needed a basic ROP chain and....
+<br />
 ![alt text](image-14.png)
 We got our flag!!
