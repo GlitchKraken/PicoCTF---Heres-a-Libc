@@ -1,6 +1,6 @@
 # PicoCTF Here's a LIBC
 
-Writeup by SpiffyLich
+Writeup by GlitchKraken /SpiffyLich
 <img align="center" alt="secretbestgirl" width="250px" src="https://imgur.com/HZsgxNa.jpg">
 
 ## Tools Used:
