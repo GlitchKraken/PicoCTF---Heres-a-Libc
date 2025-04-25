@@ -17,7 +17,7 @@ Buckle up everyone! While this exploit isnt the most complicated, by virtue of b
 Initial thoughts: I couldn't get the binary to run initially; I think the libc used was older / out of date. To bypass this, I had to use [pwninit](https://github.com/io12/pwninit), which Auto-magically sets up the binary for us.
 
 According to checksec, the binary in question has NX set (so no free shellcode...)
-but, no anonying canaries, and no full ASLR. In other words, while we **cant** put literally whatever we want on the stack and execute it, we **CAN** use whatever happens to be in the binary... including anything it happens to reference ***(cough cough libc)***.
+but, no annoying canaries, and no full ASLR. In other words, while we **cant** put literally whatever we want on the stack and execute it, we **CAN** use whatever happens to be in the binary... including anything it happens to reference ***(cough cough libc)***.
 ![alt text](image.png)
 
 next up, we'll run it to get an idea of what were dealing with, before opening it up in Ghidra.
